@@ -78,7 +78,7 @@ let products = [
     },
 ];
 for (let i = 0; i < products.length; i++) {
-    const product = products[i];
+    let product = products[i];
     document.write('<div>'+
              ' <h3>${product.title}-{product.price} UAH</h3>'+
              ' <img src="${product.image}" alt="">'+
