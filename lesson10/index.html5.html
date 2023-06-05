@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .wrapper {
+      border: red solid 4px;
+    }
+    .flex {
+      display: flex;
+    }
+    .text-center {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<h2 id="price-block">100 grn</h2>
+<script>
+  // *** (подібне було вище, але...будьте уважні в другій частині) створити сторінку з довільним блоком, в середині якого є значення "100грн"
+  // при перезавантаженні сторінки до значаення додається по 10грн, але !!!
+  //     зміна ціни відбувається тільки на перезавантаження, які відбулись пізніше ніж 10 секунд після попереднього.
+  //     При перезавантаженні, яке відбулось раніше ніж минуло 10 секунд - нічого не відбувається
+ let time = localStorage.getItem('time');
+  let price = JSON.parse(localStorage.getItem('price')) || 100;
+
+  let block = document.getElementById('price-block');
+  let currentTime = new Date().getTime();
+
+  if (time && currentTime - time > 10000) {
+    price += 10;
+    localStorage.setItem('price', price.toString());
+  }
+
+  block.innerText = price + ' grn';
+  localStorage.setItem('time', currentTime.toString());
+</script>
+</body>
+</html>

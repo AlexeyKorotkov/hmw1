@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .wrapper {
+            border: green solid 4px;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<script>
+    // - Створити довільний елемент з id = text та створити кнопку.Використовуючи JavaScript, зробіть так, щоб при натисканні на кнопку зникав елемент з id="text".
+    let block = document.createElement('div');
+    let btn = document.createElement('button');
+    block.innerText = 'Hello World';
+    btn.innerText = 'CLICK';
+    btn.onclick = () =>  block.style.display = 'none';
+    document.body.append(block, btn);
+</script>
+</body>
+</html>
