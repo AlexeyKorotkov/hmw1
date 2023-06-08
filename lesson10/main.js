@@ -67,13 +67,13 @@ function formatDate(date){
 }
 
 let json1 = localStorage.getItem('sessions');
-let sessions1
+let sessions
     = json1 ? JSON.parse(json) : [];
 
-sessions1.push({
+sessions.push({
     date: new Date().toISOString(),
 });
-localStorage.setItem('sessions', JSON.stringify(sessions1));
+localStorage.setItem('sessions', JSON.stringify(sessions));
 // =========================
 
 
